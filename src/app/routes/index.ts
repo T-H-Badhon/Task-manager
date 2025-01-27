@@ -1,17 +1,22 @@
 import { Router } from 'express'
-import { categoryRoutes } from '../modules/category/category.routes'
 import { productRoutes } from '../modules/products/product.routes'
+import { authRoutes } from '../modules/auth/auth.routes'
+import { taskRoutes } from '../modules/tasks/task.routes'
 
 const router = Router()
 
 const moduleRoutes = [
   {
-    path: '/category',
-    route: categoryRoutes,
+    path: '/auth',
+    route: authRoutes,
   },
   {
-    path: '/product',
+    path: '/users',
     route: productRoutes,
+  },
+  {
+    path: '/tasks',
+    route: taskRoutes,
   },
 ]
 
