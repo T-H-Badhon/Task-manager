@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import app from './app'
 import { Server } from 'http'
-import { seedUncategory } from './app/utilities/SeedUncategory'
 
 let server: Server
 
@@ -13,8 +12,6 @@ function main() {
   server = app.listen(4000, () => {
     console.log(`app listening on port ${4000}`)
   })
-
-  seedUncategory()
 }
 
 main()
