@@ -12,11 +12,11 @@ router.get("/", taskControllers.allTasks)
 
 router.get("/my-tasks",auth(), taskControllers.myTasks)
 
-router.get("/:id",auth(), taskControllers.singleTask)
+router.get("/:taskId",auth(), taskControllers.singleTask)
 
 router.put("/update-task/:id",auth(), validate(taskValidation.updateTask), taskControllers.updateTask)
 
-router.delete("/delete/:id",auth(), taskControllers.deleteTask)
+router.delete("/delete/:taskId",auth(), taskControllers.deleteTask)
 
 
 export const taskRoutes = router

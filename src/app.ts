@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-import router from './app/routes'
 import globalErrorHandler from './app/middlewares/GlobalErrorHandler'
+import router from './app/routes'
 
 const app = express()
 

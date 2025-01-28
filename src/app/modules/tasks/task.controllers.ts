@@ -5,7 +5,8 @@ import { taskServices } from './task.services'
 
 const addTask = catchAsync(async (req: Request, res: Response) => {
   const payload = req.body
-  const result = await taskServices.addTask(payload)
+  const userId= req.user._id
+  const result = await taskServices.addTask(userId,payload)
 
   response(res, {
     success: true,

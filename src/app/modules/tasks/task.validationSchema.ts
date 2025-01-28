@@ -4,8 +4,7 @@ const createTask = z.object({
   body: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.string(),
-    status:z.enum(["complete", "incomplete"])
+    dueDate: z.string(),
   }),
 })
 
@@ -13,7 +12,7 @@ const updateTask = z.object({
   body: z.object({
     title: z.string().optional(),
     description: z.string().optional(),
-    date: z.string().optional(),
+    dueDate: z.string().optional(),
     status:z.enum(["complete", "incomplete"]).optional()
   }),
 })

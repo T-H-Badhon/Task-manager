@@ -6,14 +6,11 @@ import { Task } from './task.model'
 import { AppError } from '../../errors/AppError'
 import httpStatus from 'http-status'
 
-const addTask = async (payload: any) => {
-  try {
-    const result = await Task.create(payload)
+const addTask = async (id:Types.ObjectId,payload: any) => {
+
+    const result = await Task.create({userId: id, ...payload})
 
     return result
-  } catch (err) {
-    console.log(err)
-  }
 }
 
 const allTasks = async (query: Record<string, unknown>) => {
@@ -31,6 +28,8 @@ const singleTask = async (id: string) => {
 
 const myTasks = async (id: string, query: Record<string, unknown>) => {
     const queryData = { userId:id ,...query}
+
+    console.log(queryData)
 
     const result = await Task.find(queryData)
 

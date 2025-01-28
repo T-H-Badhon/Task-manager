@@ -11,15 +11,11 @@ import { config } from "../../config/config"
 
 const userRegister = async (payload: TUser)=>{
 
-    try{
         payload.password = await hashedPassword(payload.password)
 
         const userData = await User.create(payload)
 
         return userData
-    }catch(err){
-        console.log(err)
-    }
 
 }
 

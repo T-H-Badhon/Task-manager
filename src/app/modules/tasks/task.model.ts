@@ -20,6 +20,7 @@ const taskSchema = new Schema<TTask>({
     status:{
         type: String,
         enum: ['complete', 'incomplete'],
+        default:"incomplete"
     }
 },
 {
