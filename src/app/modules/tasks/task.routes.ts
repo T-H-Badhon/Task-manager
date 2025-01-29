@@ -14,7 +14,7 @@ router.get("/my-tasks",auth(), taskControllers.myTasks)
 
 router.get("/:taskId",auth(), taskControllers.singleTask)
 
-router.put("/update-task/:id",auth(), validate(taskValidation.updateTask), taskControllers.updateTask)
+router.put("/update-task/:taskId",auth(), validate(taskValidation.updateTask), taskControllers.updateTask)
 
 router.delete("/delete/:taskId",auth(), taskControllers.deleteTask)
 

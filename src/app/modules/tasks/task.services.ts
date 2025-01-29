@@ -29,8 +29,6 @@ const singleTask = async (id: string) => {
 const myTasks = async (id: string, query: Record<string, unknown>) => {
     const queryData = { userId:id ,...query}
 
-    console.log(queryData)
-
     const result = await Task.find(queryData)
 
     return result
