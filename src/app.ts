@@ -7,7 +7,7 @@ const app = express()
 
 app.use(
   cors({
-    origin: ['http://localhost:5173' ],
+    origin: ['http://localhost:5173', "https://task-tracker-smoky-alpha.vercel.app" ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Restrict allowed HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Restrict allowed headers
     credentials: true, // Include credentials (cookies, authorization headers, etc.)
